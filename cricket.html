@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Game</title>
+    <link rel="stylesheet" href="game.css">
+</head>
+
+<body>
+    <h1>Bat Ball Stump Game</h1>
+    <div class="button-container">
+
+    <button
+    class="style-button" 
+    onclick="
+     let compChoice = generateCompChoice();
+     let resultMsg = getResult ('Bat', compChoice)
+     showResult('Bat' ,compChoice, resultMsg)
+    ">🏏</button>
+
+    <button
+    class="style-button"
+    onclick = "
+     compChoice = generateCompChoice();
+     resultMsg = getResult ('Ball', compChoice)
+     showResult('Ball', compChoice, resultMsg)
+    ">🥎</button>
+    
+    <button
+    class="style-button"
+    onclick = "
+     compChoice = generateCompChoice();
+     resultMsg = getResult ('Stump', compChoice)
+     showResult('Stump' ,compChoice, resultMsg)
+    ">🥢 </button>
+
+    </div>
+
+    <div id="game-results">
+        <p><span id="result"></span></p>
+        <p><span id="user-move"></span></p>
+        <p><span id="comp-move"></span></p>
+        <p><span id="result"></span></p>
+        <p>Score: <span id="score"></span></p>
+    </div>
+    
+
+    <button class="reset-button" onclick="localStorage.clear(); resetScore()">Reset</button>
+    <script src="cricket.js"></script>
+</body>
+</html>
